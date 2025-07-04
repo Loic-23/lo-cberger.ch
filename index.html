@@ -10,6 +10,7 @@
       background: #111;
       color: #f5f5f5;
       font-family: Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
     }
 
     canvas {
@@ -88,24 +89,19 @@
 
       button {
         font-size: 28px;
-        padding: 22px;
-      }
-
-      .footer {
-        font-size: 16px;
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
+
   <canvas id="particles"></canvas>
 
   <div class="content">
     <h1>Portfolio Loïc Berger</h1>
     <div class="line"></div>
     <div class="main-text">
-      In this context, the correct word would be “apprenticeship” instead of “training.” Here’s the adjusted translation:<br><br>
-      ⸻<br><br>
       Hello, my name is Loïc.<br><br>
       I am applying for an internship with you from April 20, 2026, to October 9, 2026.<br><br>
       I am currently in the second year of my apprenticeship as a graphic designer in Switzerland.<br><br>
@@ -129,9 +125,8 @@
   </div>
 
   <script>
-    const url = 'https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&viewport=-181%2C-397%2C0.3&t=ERJ3YpE64tTcpEjQ-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=826%3A1533';
-    
     function sharePortfolio() {
+      const url = 'https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&viewport=-181%2C-397%2C0.3&t=ERJ3YpE64tTcpEjQ-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=826%3A1533';
       if (navigator.share) {
         navigator.share({
           title: 'Portfolio Loïc Berger',
@@ -142,10 +137,8 @@
       }
     }
 
-    // Simple Particles
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
-    let particles = [];
 
     function resize() {
       canvas.width = window.innerWidth;
@@ -155,34 +148,31 @@
     window.addEventListener('resize', resize);
     resize();
 
-    for (let i = 0; i < 50; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 4 + 2,
-        dx: (Math.random() - 0.5) * 0.8,
-        dy: (Math.random() - 0.5) * 0.8
-      });
-    }
+    const particles = Array.from({length: 30}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 5 + 2,
+      dx: (Math.random() - 0.5) * 1,
+      dy: (Math.random() - 0.5) * 1
+    }));
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
       particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
         p.x += p.dx;
         p.y += p.dy;
-
         if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
-        ctx.fill();
       });
       requestAnimationFrame(animate);
     }
 
     animate();
   </script>
+
 </body>
 </html>
