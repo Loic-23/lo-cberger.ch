@@ -1,156 +1,158 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Epische Seite</title>
+  <meta charset="UTF-8">
+  <title>Loïc's Internship Anfrage</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      background: #000;
-      color: #F5F5F5;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 15pt;
+      background: #111;
+      height: 100vh;
       overflow: hidden;
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+    }
+
+    .floating-image {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      opacity: 0.7;
+      animation: float 30s linear infinite, spin 20s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(100px, -100px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        rotate: 0deg;
+      }
+      to {
+        rotate: 360deg;
+      }
     }
 
     .content {
       position: relative;
-      z-index: 10;
-      padding: 2rem;
+      z-index: 1;
       max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-      animation: floatText 6s ease-in-out infinite;
+      font-size: 17px;
+      line-height: 1.5;
+      display: grid;
+      gap: 20px;
+      text-align: left;
     }
 
-    @keyframes floatText {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+    .experimental {
+      position: relative;
+    }
+
+    .experimental:nth-child(odd) {
+      transform: translateX(-10px) rotate(-1deg);
+    }
+
+    .experimental:nth-child(even) {
+      transform: translateX(15px) rotate(1.5deg);
     }
 
     button {
-      margin-top: 2rem;
-      padding: 0.6rem 1.2rem;
-      font-size: 15pt;
-      background-color: #F5F5F5;
-      color: #000;
+      padding: 10px 20px;
+      background-color: #ff4081;
       border: none;
+      color: white;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      margin-top: 30px;
+      font-size: 16px;
     }
 
     button:hover {
-      background-color: #ccc;
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
+      background-color: #e91e63;
     }
   </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
 
+  <!-- 20 schwebende Bilder -->
+  <img src="bild1.jpg" class="floating-image" style="top: 10%; left: 5%;">
+  <img src="bild2.jpg" class="floating-image" style="top: 30%; left: 80%;">
+  <img src="bild3.jpg" class="floating-image" style="top: 60%; left: 20%;">
+  <img src="bild4.jpg" class="floating-image" style="top: 75%; left: 70%;">
+  <img src="bild5.jpg" class="floating-image" style="top: 40%; left: 50%;">
+  <img src="bild6.jpg" class="floating-image" style="top: 15%; left: 35%;">
+  <img src="bild7.jpg" class="floating-image" style="top: 50%; left: 10%;">
+  <img src="bild8.jpg" class="floating-image" style="top: 5%; left: 60%;">
+  <img src="bild9.jpg" class="floating-image" style="top: 80%; left: 15%;">
+  <img src="bild10.jpg" class="floating-image" style="top: 25%; left: 25%;">
+  <img src="bild11.jpg" class="floating-image" style="top: 35%; left: 55%;">
+  <img src="bild12.jpg" class="floating-image" style="top: 45%; left: 85%;">
+  <img src="bild13.jpg" class="floating-image" style="top: 65%; left: 45%;">
+  <img src="bild14.jpg" class="floating-image" style="top: 70%; left: 5%;">
+  <img src="bild15.jpg" class="floating-image" style="top: 90%; left: 90%;">
+  <img src="bild16.jpg" class="floating-image" style="top: 20%; left: 75%;">
+  <img src="bild17.jpg" class="floating-image" style="top: 10%; left: 40%;">
+  <img src="bild18.jpg" class="floating-image" style="top: 60%; left: 75%;">
+  <img src="bild19.jpg" class="floating-image" style="top: 85%; left: 30%;">
+  <img src="bild20.jpg" class="floating-image" style="top: 55%; left: 65%;">
+
+  <!-- Vordergrund-Inhalt -->
   <div class="content">
-    <h1>Willkommen auf meiner Seite</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula felis sed orci bibendum, 
-      nec tristique justo laoreet. Mauris tristique, enim at laoreet pulvinar, ante arcu efficitur sapien. 
-      Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
-    </p>
-    <button onclick="sharePage()">Teilen</button>
+    <div class="experimental">
+      Hallo Mein Name ist Loïc
+    </div>
+    <div class="experimental">
+      Das ist meine Anfrage für ein Internship bei euch.
+    </div>
+    <div class="experimental">
+      Die Zeitspanne wäre von 20.4 - 9.10.2026
+    </div>
+    <div class="experimental">
+      Ich habe das Portfolio in meiner Freizeit gemacht, da ich früh genug dran sein wollte. 
+      Ich hatte dadurch nur begrenzt Zeit, daher ist meine Website aktuell noch nicht ganz fertig. 
+      Daher hab ich mal einen Link von meinem Figma unten eingefügt als Portfolio:
+    </div>
+    <div class="experimental">
+      <a href="https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&p=f&viewport=430%2C330%2C0.28&t=iPBE1s6YISRJgrkH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=826%3A1533" 
+         target="_blank" style="color: #ff4081; text-decoration: underline;">Portfolio Link (Figma)</a>
+    </div>
+    <div class="experimental">
+      Direkt im Figma gibt es ein Video – das ist eigentlich mein zentrales Portfolio, wo ich meine Projekte zeige. Das Video geht ca. 8 Minuten, nur so als kleiner Hinweis vorab.
+    </div>
+    <div class="experimental">
+      Im Rest vom Figma findet ihr dann noch alle anderen Projekte, die ich ausgewählt habe, und auch ein paar persönliche Infos über mich.
+    </div>
+    <div class="experimental">
+      Das Figma selbst ist noch nicht ganz ausgereift – die Interactions sind noch nicht perfekt, und es gibt auch ein paar Layoutfehler. Aber ich hoffe, man kann darüber hinwegschauen und sich auf den Inhalt konzentrieren – der ist nämlich überall drin.
+    </div>
+    <div class="experimental">
+      Ich freue mich, von euch zu hören!
+    </div>
+    <div class="experimental">
+      Liebe Grüsse<br>Loïc
+    </div>
+
+    <button onclick="navigator.share ? navigator.share({title: 'Mein Portfolio', url: window.location.href}) : alert('Teilen ist in deinem Browser nicht verfügbar');">
+      Teilen
+    </button>
   </div>
 
-  <script>
-    function sharePage() {
-      const shareData = {
-        title: 'Epische Seite',
-        text: 'Check das aus!',
-        url: window.location.href
-      };
-
-      if (navigator.share) {
-        navigator.share(shareData).catch(console.error);
-      } else {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          alert('Link wurde kopiert!');
-        });
-      }
-    }
-
-    // Partikel-Effekt (leicht & episch)
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.radius = Math.random() * 1.5 + 0.5;
-        this.alpha = Math.random() * 0.5 + 0.2;
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (
-          this.x < 0 || this.x > canvas.width ||
-          this.y < 0 || this.y > canvas.height
-        ) {
-          this.reset();
-        }
-      }
-
-      draw(ctx) {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(245, 245, 245, ${this.alpha})`;
-        ctx.fill();
-      }
-    }
-
-    function initParticles(count) {
-      particles = [];
-      for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.update();
-        p.draw(ctx);
-      });
-      requestAnimationFrame(animate);
-    }
-
-    initParticles(100); // Anzahl Partikel
-    animate();
-  </script>
 </body>
 </html>
