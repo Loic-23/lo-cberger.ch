@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meine Seite</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 15pt;
+      background-color: #fff;
+      color: #333;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-weight: 500;
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.6rem 1.2rem;
+      font-size: 15pt;
+      font-family: inherit;
+      background-color: #007aff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Willkommen!</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula felis sed orci bibendum, 
+    nec tristique justo laoreet. Mauris tristique, enim at laoreet pulvinar, ante arcu efficitur sapien, 
+    nec consequat sapien ex nec augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
+    posuere cubilia curae; Nullam eu feugiat nisl. Aliquam erat volutpat. Donec ullamcorper purus at 
+    commodo porttitor. Integer lobortis felis nec lorem elementum, ut fermentum erat vulputate.
+  </p>
+
+  <button onclick="sharePage()">Teilen</button>
+
+  <script>
+    function sharePage() {
+      const shareData = {
+        title: 'Meine Seite',
+        text: 'Schau dir diese Seite an!',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(console.error);
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          alert('Link wurde in die Zwischenablage kopiert!');
+        });
+      }
+    }
+  </script>
+</body>
+</html>
