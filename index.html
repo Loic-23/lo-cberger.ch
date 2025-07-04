@@ -2,50 +2,25 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio Loïc Berger </title>
+  <title>Portfolio Loïc Berger</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       background: #111;
-      overflow: hidden;
-      height: 100%;
+      color: #f5f5f5;
       font-family: Helvetica, Arial, sans-serif;
-      color: white;
+      height: 100%;
+      overflow: hidden;
     }
 
-    .background-text {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 32px;
-      opacity: 0.2;
-      letter-spacing: 2px;
-      white-space: nowrap;
-      pointer-events: none;
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 0;
-    }
-
-    .floating-box {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 6px;
-      opacity: 0.6;
-      animation: float 15s infinite ease-in-out alternate;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      50% {
-        transform: translate3d(50px, -50px, 0) scale(1.2);
-      }
-      100% {
-        transform: translate3d(-30px, 30px, 0) scale(0.9);
-      }
     }
 
     .content {
@@ -53,89 +28,136 @@
       z-index: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
       height: 100%;
-      padding: 30px;
       text-align: center;
     }
 
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
     .main-text {
-      font-size: 24px;
-      line-height: 1.4;
-      max-width: 500px;
+      font-size: 20px;
+      line-height: 1.5;
+      max-width: 800px;
       margin-bottom: 40px;
     }
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 300px;
-    }
-
     button {
-      padding: 15px;
-      background-color: #ff4081;
+      background-color: #f5f5f5;
+      color: #111;
       border: none;
       border-radius: 8px;
-      color: white;
+      padding: 15px 20px;
       font-size: 16px;
       cursor: pointer;
+      transition: background 0.3s;
     }
 
     button:hover {
-      background-color: #e91e63;
+      background-color: #e0e0e0;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
-      .main-text {
-        font-size: 20px;
+      h1 {
+        font-size: 28px;
       }
 
-      .background-text {
-        font-size: 24px;
+      .main-text {
+        font-size: 18px;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 12px 16px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="background-text">Portfolio Leugberger</div>
+  <canvas id="particles"></canvas>
 
-  <!-- 10 farbige Vierecke (Platzhalter für Bilder) -->
-  <div class="floating-box" style="top: 10%; left: 20%; background: #ff4c4c;"></div>
-  <div class="floating-box" style="top: 30%; left: 80%; background: #4cffc0;"></div>
-  <div class="floating-box" style="top: 60%; left: 10%; background: #4c8bff;"></div>
-  <div class="floating-box" style="top: 75%; left: 70%; background: #ffed4c;"></div>
-  <div class="floating-box" style="top: 40%; left: 50%; background: #ff4ca6;"></div>
-  <div class="floating-box" style="top: 15%; left: 35%; background: #4cff89;"></div>
-  <div class="floating-box" style="top: 50%; left: 5%; background: #ff6f4c;"></div>
-  <div class="floating-box" style="top: 5%; left: 60%; background: #4cffff;"></div>
-  <div class="floating-box" style="top: 80%; left: 15%; background: #b64cff;"></div>
-  <div class="floating-box" style="top: 25%; left: 25%; background: #ffd24c;"></div>
-
-  <!-- Vordergrund-Inhalt -->
   <div class="content">
+    <h1>Portfolio Loïc Berger</h1>
     <div class="main-text">
-      Hallo! Ich bin Loïc.<br>
-      Das hier ist meine Anfrage für ein Internship.<br>
-      Zeitraum: 20.4 – 9.10.2026<br>
-      Mein Portfolio findest du unten.
+      Hallo Mein Name ist Loïc<br><br>
+      Das ist meine Anfrage für ein Internship bei euch.<br><br>
+      Die Zeitspanne wäre von 20.4 - 9.10.2026<br><br>
+      Ich habe das Portfolio in meiner Freizeit gemacht, da ich früh genug dran sein wollte. Ich hatte dadurch nur begrenzt Zeit, daher ist meine Website aktuell noch nicht ganz fertig. Daher habe ich mal einen Link von meinem Figma unten eingefügt als Portfolio:<br><br>
+      https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&p=f&viewport=430%2C330%2C0.28&t=iPBE1s6YISRJgrkH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=826%3A1533<br><br>
+      Direkt im Figma gibt es ein Video – das ist eigentlich mein zentrales Portfolio, wo ich meine Projekte zeige. Das Video geht ca. 8 Minuten, nur so als kleiner Hinweis vorab.<br><br>
+      Im Rest vom Figma findet ihr dann noch alle anderen Projekte, die ich ausgewählt habe, und auch ein paar persönliche Infos über mich.<br><br>
+      Das Figma selbst ist noch nicht ganz ausgereift – die Interactions sind noch nicht perfekt, und es gibt auch ein paar Layoutfehler. Aber ich hoffe, man kann darüber hinwegschauen und sich auf den Inhalt konzentrieren – der ist nämlich überall drin.<br><br>
+      Ich freue mich, von euch zu hören!<br><br>
+      Liebe Grüsse<br>
+      Loic
     </div>
 
-    <div class="buttons">
-      <button onclick="window.open('https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&p=f&viewport=430%2C330%2C0.28&t=iPBE1s6YISRJgrkH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=826%3A1533', '_blank')">
-        Figma Portfolio öffnen
-      </button>
-
-      <button onclick="navigator.share ? navigator.share({title: 'Portfolio Leugberger', url: window.location.href}) : alert('Teilen nicht verfügbar');">
-        Teilen
-      </button>
-    </div>
+    <button onclick="sharePortfolio()">Portfolio teilen</button>
   </div>
+
+  <script>
+    // Share-Button (Figma-Link teilen)
+    function sharePortfolio() {
+      const url = 'https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&p=f&viewport=430%2C330%2C0.28&t=iPBE1s6YISRJgrkH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=826%3A1533';
+      if (navigator.share) {
+        navigator.share({
+          title: 'Portfolio Loïc Berger',
+          url: url
+        }).catch(console.error);
+      } else {
+        window.prompt('Link kopieren:', url);
+      }
+    }
+
+    // Partikel-Animation
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.7,
+        dy: (Math.random() - 0.5) * 0.7
+      });
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#f5f5f5';
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      }
+      requestAnimationFrame(drawParticles);
+    }
+
+    drawParticles();
+  </script>
 
 </body>
 </html>
