@@ -32,7 +32,7 @@
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 50px;
       font-weight: bold;
       margin-bottom: 10px;
     }
@@ -43,8 +43,8 @@
     }
 
     .main-text {
-      font-size: 22px;
-      line-height: 1.7;
+      font-size: 28px;
+      line-height: 1.8;
       margin-bottom: 40px;
     }
 
@@ -53,8 +53,8 @@
       color: #111;
       border: none;
       border-radius: 8px;
-      padding: 15px 20px;
-      font-size: 18px;
+      padding: 20px;
+      font-size: 22px;
       cursor: pointer;
       transition: background 0.3s;
       width: 100%;
@@ -71,18 +71,23 @@
     }
 
     .footer {
-      text-align: center;
-      font-size: 14px;
+      text-align: left;
+      font-size: 16px;
       opacity: 0.7;
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 34px;
+        font-size: 42px;
       }
 
       .main-text {
+        font-size: 26px;
+      }
+
+      button {
         font-size: 20px;
+        padding: 18px;
       }
     }
   </style>
@@ -137,13 +142,13 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 80; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.7,
-        dy: (Math.random() - 0.5) * 0.7
+        radius: Math.random() * 8 + 4, // Größere Partikel
+        dx: (Math.random() - 0.5) * 2, // Mehr Bewegung
+        dy: (Math.random() - 0.5) * 2
       });
     }
 
