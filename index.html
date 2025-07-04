@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Portfolio Loïc Berger</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     html, body {
       margin: 0;
@@ -21,9 +21,9 @@
     }
 
     h1 {
-      font-size: 100px;
       font-weight: bold;
       margin-bottom: 20px;
+      font-size: clamp(40px, 10vw, 100px);
     }
 
     .line {
@@ -34,7 +34,7 @@
     }
 
     .main-text {
-      font-size: 60px;
+      font-size: clamp(24px, 6vw, 60px);
       line-height: 1.4;
       margin-bottom: 50px;
     }
@@ -45,7 +45,7 @@
       border: none;
       border-radius: 8px;
       padding: 25px;
-      font-size: 60px; /* Gleich groß wie Fließtext */
+      font-size: clamp(24px, 6vw, 60px);
       cursor: pointer;
       width: 100%;
       margin-bottom: 50px;
@@ -65,46 +65,25 @@
 
     .footer {
       text-align: left;
-      font-size: 20px;
+      font-size: clamp(14px, 3vw, 20px);
       opacity: 0.7;
-    }
-
-    /* Auf ganz kleinen Bildschirmen kleiner als 400px */
-    @media (max-width: 400px) {
-      h1 {
-        font-size: 80px;
-      }
-
-      .main-text {
-        font-size: 40px;
-      }
-
-      button {
-        font-size: 40px;
-        padding: 20px;
-      }
-
-      .footer {
-        font-size: 18px;
-      }
     }
   </style>
 </head>
 <body>
-
   <div class="content">
     <h1>Portfolio Loïc Berger</h1>
     <div class="line"></div>
     <div class="main-text">
-      Hallo Mein Name ist Loïc<br><br>
-      Das ist meine Anfrage für ein Internship bei euch.<br><br>
-      Die Zeitspanne wäre von 20.4 - 9.10.2026<br><br>
-      Ich habe das Portfolio in meiner Freizeit gemacht, da ich früh genug dran sein wollte. Ich hatte dadurch nur begrenzt Zeit, daher ist meine Website aktuell noch nicht ganz fertig.<br><br>
-      Direkt im Figma gibt es ein Video – das ist eigentlich mein zentrales Portfolio, wo ich meine Projekte zeige. Das Video geht ca. 8 Minuten, nur so als kleiner Hinweis vorab.<br><br>
-      Im Rest vom Figma findet ihr dann noch alle anderen Projekte, die ich ausgewählt habe, und auch ein paar persönliche Infos über mich.<br><br>
-      Das Figma selbst ist noch nicht ganz ausgereift – die Interactions sind noch nicht perfekt, und es gibt auch ein paar Layoutfehler. Aber ich hoffe, man kann darüber hinwegschauen und sich auf den Inhalt konzentrieren – der ist nämlich überall drin.<br><br>
-      Ich freue mich, von euch zu hören!<br><br>
-      Liebe Grüsse<br>
+      Hallo Mein Name ist Loïc<br /><br />
+      Das ist meine Anfrage für ein Internship bei euch.<br /><br />
+      Die Zeitspanne wäre von 20.4 - 9.10.2026<br /><br />
+      Ich habe das Portfolio in meiner Freizeit gemacht, da ich früh genug dran sein wollte. Ich hatte dadurch nur begrenzt Zeit, daher ist meine Website aktuell noch nicht ganz fertig.<br /><br />
+      Direkt im Figma gibt es ein Video – das ist eigentlich mein zentrales Portfolio, wo ich meine Projekte zeige. Das Video geht ca. 8 Minuten, nur so als kleiner Hinweis vorab.<br /><br />
+      Im Rest vom Figma findet ihr dann noch alle anderen Projekte, die ich ausgewählt habe, und auch ein paar persönliche Infos über mich.<br /><br />
+      Das Figma selbst ist noch nicht ganz ausgereift – die Interactions sind noch nicht perfekt, und es gibt auch ein paar Layoutfehler. Aber ich hoffe, man kann darüber hinwegschauen und sich auf den Inhalt konzentrieren – der ist nämlich überall drin.<br /><br />
+      Ich freue mich, von euch zu hören!<br /><br />
+      Liebe Grüsse<br />
       Loic
     </div>
 
@@ -126,6 +105,5 @@
       }
     }
   </script>
-
 </body>
 </html>
