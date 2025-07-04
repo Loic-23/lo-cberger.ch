@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Portfolio Loïc Berger</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     html, body {
       margin: 0;
@@ -11,6 +10,16 @@
       background: #111;
       color: #f5f5f5;
       font-family: Helvetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     .content {
@@ -21,20 +30,20 @@
     }
 
     h1 {
+      font-size: 100px;
       font-weight: bold;
       margin-bottom: 20px;
-      font-size: clamp(40px, 10vw, 100px);
     }
 
     .line {
       width: 100vw;
       border-bottom: 2px solid #f5f5f5;
-      margin-left: -5vw; /* Linie über den Container hinaus */
+      margin-left: -5vw;
       margin-bottom: 40px;
     }
 
     .main-text {
-      font-size: clamp(24px, 6vw, 60px);
+      font-size: 60px;
       line-height: 1.4;
       margin-bottom: 50px;
     }
@@ -45,7 +54,7 @@
       border: none;
       border-radius: 8px;
       padding: 25px;
-      font-size: clamp(24px, 6vw, 60px);
+      font-size: 60px;
       cursor: pointer;
       width: 100%;
       margin-bottom: 50px;
@@ -65,45 +74,116 @@
 
     .footer {
       text-align: left;
-      font-size: clamp(14px, 3vw, 20px);
+      font-size: 20px;
       opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 48px;
+      }
+
+      .main-text {
+        font-size: 28px;
+      }
+
+      button {
+        font-size: 28px;
+        padding: 22px;
+      }
+
+      .footer {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
+  <canvas id="particles"></canvas>
+
   <div class="content">
     <h1>Portfolio Loïc Berger</h1>
     <div class="line"></div>
     <div class="main-text">
-      Hallo Mein Name ist Loïc<br /><br />
-      Das ist meine Anfrage für ein Internship bei euch.<br /><br />
-      Die Zeitspanne wäre von 20.4 - 9.10.2026<br /><br />
-      Ich habe das Portfolio in meiner Freizeit gemacht, da ich früh genug dran sein wollte. Ich hatte dadurch nur begrenzt Zeit, daher ist meine Website aktuell noch nicht ganz fertig.<br /><br />
-      Direkt im Figma gibt es ein Video – das ist eigentlich mein zentrales Portfolio, wo ich meine Projekte zeige. Das Video geht ca. 8 Minuten, nur so als kleiner Hinweis vorab.<br /><br />
-      Im Rest vom Figma findet ihr dann noch alle anderen Projekte, die ich ausgewählt habe, und auch ein paar persönliche Infos über mich.<br /><br />
-      Das Figma selbst ist noch nicht ganz ausgereift – die Interactions sind noch nicht perfekt, und es gibt auch ein paar Layoutfehler. Aber ich hoffe, man kann darüber hinwegschauen und sich auf den Inhalt konzentrieren – der ist nämlich überall drin.<br /><br />
-      Ich freue mich, von euch zu hören!<br /><br />
-      Liebe Grüsse<br />
-      Loic
+      In this context, the correct word would be “apprenticeship” instead of “training.” Here’s the adjusted translation:<br><br>
+      ⸻<br><br>
+      Hello, my name is Loïc.<br><br>
+      I am applying for an internship with you from April 20, 2026, to October 9, 2026.<br><br>
+      I am currently in the second year of my apprenticeship as a graphic designer in Switzerland.<br><br>
+      My portfolio, in the form of a Figma project, can be shared on the computer using the button below.<br><br>
+      Since I wanted to apply early enough, I independently created a portfolio. I will later convert this into a website.<br><br>
+      In the Figma file, there is a video in which I present three selected projects and share some personal information; it lasts just under 8 minutes. Additionally, other selected projects and personal information are included in the Figma file.<br><br>
+      I look forward to hearing from you!<br><br>
+      Best regards,<br>
+      Loïc<br><br>
+      Loïc Berger<br>
+      Weidliweg 19<br>
+      3700 Spiez<br>
+      Switzerland<br>
+      +41 79 552 91 66<br>
+      loicberger@icloud.com
     </div>
 
-    <button onclick="sharePortfolio()">Figma-Link teilen</button>
+    <button onclick="sharePortfolio()">Share Figma-Link</button>
     <div class="footer-line"></div>
     <div class="footer">© 2025 Loïc Berger</div>
   </div>
 
   <script>
+    const url = 'https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&viewport=-181%2C-397%2C0.3&t=ERJ3YpE64tTcpEjQ-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=826%3A1533';
+    
     function sharePortfolio() {
-      const url = 'https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&p=f&viewport=430%2C330%2C0.28&t=iPBE1s6YISRJgrkH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=826%3A1533';
       if (navigator.share) {
         navigator.share({
           title: 'Portfolio Loïc Berger',
           url: url
         }).catch(console.error);
       } else {
-        window.prompt('Link kopieren:', url);
+        window.prompt('Copy this link:', url);
       }
     }
+
+    // Simple Particles
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    for (let i = 0; i < 50; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 4 + 2,
+        dx: (Math.random() - 0.5) * 0.8,
+        dy: (Math.random() - 0.5) * 0.8
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(245, 245, 245, 0.3)';
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
   </script>
 </body>
 </html>
