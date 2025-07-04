@@ -2,156 +2,139 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Loïc's Internship Anfrage</title>
+  <title>Portfolio Loïc Berger </title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       background: #111;
-      height: 100vh;
       overflow: hidden;
+      height: 100%;
       font-family: Helvetica, Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
       color: white;
-      text-align: center;
-      padding: 40px;
-      position: relative;
     }
 
-    .floating-image {
+    .background-text {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      opacity: 0.2;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-box {
       position: absolute;
       width: 40px;
       height: 40px;
-      object-fit: cover;
-      opacity: 0.7;
-      animation: float 30s linear infinite, spin 20s linear infinite;
+      border-radius: 6px;
+      opacity: 0.6;
+      animation: float 15s infinite ease-in-out alternate;
     }
 
     @keyframes float {
       0% {
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0) scale(1);
       }
       50% {
-        transform: translate(100px, -100px);
+        transform: translate3d(50px, -50px, 0) scale(1.2);
       }
       100% {
-        transform: translate(0, 0);
-      }
-    }
-
-    @keyframes spin {
-      from {
-        rotate: 0deg;
-      }
-      to {
-        rotate: 360deg;
+        transform: translate3d(-30px, 30px, 0) scale(0.9);
       }
     }
 
     .content {
       position: relative;
       z-index: 1;
-      max-width: 600px;
-      font-size: 17px;
-      line-height: 1.5;
-      display: grid;
-      gap: 20px;
-      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 30px;
+      text-align: center;
     }
 
-    .experimental {
-      position: relative;
+    .main-text {
+      font-size: 24px;
+      line-height: 1.4;
+      max-width: 500px;
+      margin-bottom: 40px;
     }
 
-    .experimental:nth-child(odd) {
-      transform: translateX(-10px) rotate(-1deg);
-    }
-
-    .experimental:nth-child(even) {
-      transform: translateX(15px) rotate(1.5deg);
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
     }
 
     button {
-      padding: 10px 20px;
+      padding: 15px;
       background-color: #ff4081;
       border: none;
+      border-radius: 8px;
       color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 30px;
       font-size: 16px;
+      cursor: pointer;
     }
 
     button:hover {
       background-color: #e91e63;
     }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .main-text {
+        font-size: 20px;
+      }
+
+      .background-text {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- 20 schwebende Bilder -->
-  <img src="bild1.jpg" class="floating-image" style="top: 10%; left: 5%;">
-  <img src="bild2.jpg" class="floating-image" style="top: 30%; left: 80%;">
-  <img src="bild3.jpg" class="floating-image" style="top: 60%; left: 20%;">
-  <img src="bild4.jpg" class="floating-image" style="top: 75%; left: 70%;">
-  <img src="bild5.jpg" class="floating-image" style="top: 40%; left: 50%;">
-  <img src="bild6.jpg" class="floating-image" style="top: 15%; left: 35%;">
-  <img src="bild7.jpg" class="floating-image" style="top: 50%; left: 10%;">
-  <img src="bild8.jpg" class="floating-image" style="top: 5%; left: 60%;">
-  <img src="bild9.jpg" class="floating-image" style="top: 80%; left: 15%;">
-  <img src="bild10.jpg" class="floating-image" style="top: 25%; left: 25%;">
-  <img src="bild11.jpg" class="floating-image" style="top: 35%; left: 55%;">
-  <img src="bild12.jpg" class="floating-image" style="top: 45%; left: 85%;">
-  <img src="bild13.jpg" class="floating-image" style="top: 65%; left: 45%;">
-  <img src="bild14.jpg" class="floating-image" style="top: 70%; left: 5%;">
-  <img src="bild15.jpg" class="floating-image" style="top: 90%; left: 90%;">
-  <img src="bild16.jpg" class="floating-image" style="top: 20%; left: 75%;">
-  <img src="bild17.jpg" class="floating-image" style="top: 10%; left: 40%;">
-  <img src="bild18.jpg" class="floating-image" style="top: 60%; left: 75%;">
-  <img src="bild19.jpg" class="floating-image" style="top: 85%; left: 30%;">
-  <img src="bild20.jpg" class="floating-image" style="top: 55%; left: 65%;">
+  <div class="background-text">Portfolio Leugberger</div>
+
+  <!-- 10 farbige Vierecke (Platzhalter für Bilder) -->
+  <div class="floating-box" style="top: 10%; left: 20%; background: #ff4c4c;"></div>
+  <div class="floating-box" style="top: 30%; left: 80%; background: #4cffc0;"></div>
+  <div class="floating-box" style="top: 60%; left: 10%; background: #4c8bff;"></div>
+  <div class="floating-box" style="top: 75%; left: 70%; background: #ffed4c;"></div>
+  <div class="floating-box" style="top: 40%; left: 50%; background: #ff4ca6;"></div>
+  <div class="floating-box" style="top: 15%; left: 35%; background: #4cff89;"></div>
+  <div class="floating-box" style="top: 50%; left: 5%; background: #ff6f4c;"></div>
+  <div class="floating-box" style="top: 5%; left: 60%; background: #4cffff;"></div>
+  <div class="floating-box" style="top: 80%; left: 15%; background: #b64cff;"></div>
+  <div class="floating-box" style="top: 25%; left: 25%; background: #ffd24c;"></div>
 
   <!-- Vordergrund-Inhalt -->
   <div class="content">
-    <div class="experimental">
-      Hallo Mein Name ist Loïc
-    </div>
-    <div class="experimental">
-      Das ist meine Anfrage für ein Internship bei euch.
-    </div>
-    <div class="experimental">
-      Die Zeitspanne wäre von 20.4 - 9.10.2026
-    </div>
-    <div class="experimental">
-      Ich habe das Portfolio in meiner Freizeit gemacht, da ich früh genug dran sein wollte. 
-      Ich hatte dadurch nur begrenzt Zeit, daher ist meine Website aktuell noch nicht ganz fertig. 
-      Daher hab ich mal einen Link von meinem Figma unten eingefügt als Portfolio:
-    </div>
-    <div class="experimental">
-      <a href="https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&p=f&viewport=430%2C330%2C0.28&t=iPBE1s6YISRJgrkH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=826%3A1533" 
-         target="_blank" style="color: #ff4081; text-decoration: underline;">Portfolio Link (Figma)</a>
-    </div>
-    <div class="experimental">
-      Direkt im Figma gibt es ein Video – das ist eigentlich mein zentrales Portfolio, wo ich meine Projekte zeige. Das Video geht ca. 8 Minuten, nur so als kleiner Hinweis vorab.
-    </div>
-    <div class="experimental">
-      Im Rest vom Figma findet ihr dann noch alle anderen Projekte, die ich ausgewählt habe, und auch ein paar persönliche Infos über mich.
-    </div>
-    <div class="experimental">
-      Das Figma selbst ist noch nicht ganz ausgereift – die Interactions sind noch nicht perfekt, und es gibt auch ein paar Layoutfehler. Aber ich hoffe, man kann darüber hinwegschauen und sich auf den Inhalt konzentrieren – der ist nämlich überall drin.
-    </div>
-    <div class="experimental">
-      Ich freue mich, von euch zu hören!
-    </div>
-    <div class="experimental">
-      Liebe Grüsse<br>Loïc
+    <div class="main-text">
+      Hallo! Ich bin Loïc.<br>
+      Das hier ist meine Anfrage für ein Internship.<br>
+      Zeitraum: 20.4 – 9.10.2026<br>
+      Mein Portfolio findest du unten.
     </div>
 
-    <button onclick="navigator.share ? navigator.share({title: 'Mein Portfolio', url: window.location.href}) : alert('Teilen ist in deinem Browser nicht verfügbar');">
-      Teilen
-    </button>
+    <div class="buttons">
+      <button onclick="window.open('https://www.figma.com/proto/d3kwgTXYKO1DcRZIBokPBg/Portfolio_Loic?page-id=826%3A1532&node-id=826-1533&p=f&viewport=430%2C330%2C0.28&t=iPBE1s6YISRJgrkH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=826%3A1533', '_blank')">
+        Figma Portfolio öffnen
+      </button>
+
+      <button onclick="navigator.share ? navigator.share({title: 'Portfolio Leugberger', url: window.location.href}) : alert('Teilen nicht verfügbar');">
+        Teilen
+      </button>
+    </div>
   </div>
 
 </body>
